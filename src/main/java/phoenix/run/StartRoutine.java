@@ -1,6 +1,8 @@
-package phoenix.entrypoint;
+package phoenix.run;
 
-import phoenix.service.StageHandler;
+import phoenix.entrypoint.Splash;
+import phoenix.landing.Landing;
+import service.StageHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -20,6 +22,8 @@ public class StartRoutine extends Application
     {
         stageHandler = new StageHandler(primaryStage);
         (new Splash()).run(StartRoutine.stageHandler);
+        (new Landing()).run(StartRoutine.stageHandler);
+
     }
 
 

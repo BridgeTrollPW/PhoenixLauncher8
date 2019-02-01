@@ -1,4 +1,4 @@
-package phoenix.service;
+package service;
 
 import javafx.stage.Stage;
 
