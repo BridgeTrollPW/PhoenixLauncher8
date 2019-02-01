@@ -1,4 +1,4 @@
-package model.http;
+package phoenix.model.http;
 
 public enum ErrorCode {
     MALFORMED_URL(900, "Request URL is malformed"),

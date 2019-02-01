@@ -1,7 +1,7 @@
-package entrypoint;
+package phoenix.entrypoint;
 
-import interfaces.UIController;
-import service.StageHandler;
+import phoenix.interfaces.UIController;
+import phoenix.service.StageHandler;
 
 public class Splash implements UIController
 {

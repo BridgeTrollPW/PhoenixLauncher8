@@ -1,7 +1,7 @@
-package util;
+package phoenix.util;
 
-import model.http.ErrorCode;
-import model.http.Response;
+import phoenix.model.http.ErrorCode;
+import phoenix.model.http.Response;
 
 import java.io.BufferedReader;
 import java.io.IOException;

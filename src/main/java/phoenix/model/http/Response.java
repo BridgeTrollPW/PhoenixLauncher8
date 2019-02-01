@@ -1,4 +1,4 @@
-package model.http;
+package phoenix.model.http;
 
 public class Response {
     private String[] headers;

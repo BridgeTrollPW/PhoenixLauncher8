@@ -1,6 +1,6 @@
-package interfaces;
+package phoenix.interfaces;
 
-import service.StageHandler;
+import phoenix.service.StageHandler;
 
 public interface UIController
 {

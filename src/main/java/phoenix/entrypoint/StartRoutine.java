@@ -1,6 +1,6 @@
-package entrypoint;
+package phoenix.entrypoint;
 
-import service.StageHandler;
+import phoenix.service.StageHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
