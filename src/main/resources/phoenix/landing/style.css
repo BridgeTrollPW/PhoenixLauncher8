@@ -1,180 +1,272 @@
-.tab-pane
-{
--fx-skin: "com.sun.javafx.scene.control.skin.TabPaneSkin";
-/* -fx-tab-min-width: 4.583em;  55 */
-/* -fx-tab-max-width: 4.583em; 55 */
--fx-tab-min-height: 2em; /* 24 */
--fx-tab-max-height: 2em; /* 24 */
+/**
+ * Base
+ */
+.root {
+  -fx-background-color: #ffffff;
 }
-.tab .tab-label
-{
--fx-skin: "com.sun.javafx.scene.control.skin.LabelSkin";
--fx-background-color: transparent;
--fx-alignment: CENTER;
--fx-text-fill: -fx-text-base-color;
+
+/**
+ * Base
+ */
+
+.hbox,
+.vbox,
+.pane,
+.scroll-pane {
+  -fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -fx-font-size: 14px;
+  -fx-background-color: transparent;
 }
-/*
-.tab *.tab-label Text {
--fx-effect: dropshadow(two-pass-box , rgba(255, 255, 255, 0.4), 1, 0.0 , 0, 1);
-}*/
-.tab-content-area
-{
--fx-background-color: -fx-control-inner-background;
--fx-padding: 0.0em; /* 0 */
-/* -fx-opacity: -fx-disabled-opacity;*/
+
+.accordion,
+.button,
+.cell,
+.check-box,
+.choice-box,
+.color-picker,
+.combo-box,
+.label,
+.list-cell,
+.text-area,
+.text-field {
+  -fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -fx-font-size: 14px;
+  -fx-text-fill: #333333;
 }
-.tab
-{
-/* This is how it is done in Button, but the -1 inset caused a white line  */
-/* to appear beneath the tab, which looks bad, so it's taken out below.    */
-/*    -fx-background-color: -fx-shadow-highlight-color, -fx-tab-border-color, -fx-inner-border, -fx-body-color;
--fx-background-radius: 5 5 0 0, 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-background-insets: 0 0 -1 0, 0, 1, 2;*/
--fx-background-insets: 0, 1, 2;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-padding: 0.083333em 0.5em 0.083333em 0.5em; /* 1 6 1 6 */
-/*    -fx-text-fill: -fx-text-base-color;*/
+
+/**
+ * Controls
+ */
+.hyperlink {
+  -fx-text-fill: #428bca;
 }
-.tab:top
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
+.hyperlink:hover,
+.hyperlink:focused {
+  -fx-text-fill: #2a6496;
+  -fx-underline: true;
 }
-.tab:right
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border-bottomup, -fx-body-color-bottomup;
+
+.button {
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4px;
+  -fx-padding: 6px 12px 6px 12px;
 }
-.tab:bottom
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border-bottomup, -fx-body-color-bottomup;
+
+/**
+ * Style
+ */
+.small {
+  -fx-font-size: 85%;
 }
-.tab:left
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
+.code, .kbd, .pre, .samp {
+  -fx-font-family: monospace, serif;
+  -fx-font-size: 14px; /* 1em; There are bugs on focus. size of 'em' copied and over wrote from other control.  */
 }
-.tab:hover
-{
--fx-color: -fx-hover-base;
+.text-muted {
+  -fx-text-fill: #999999;
 }
-.tab:selected
-{
-/*    -fx-background-color: white;*/
-/*    -fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-background-insets: 0, 1 1 0 1, 2 2 0 2;*/
--fx-background-color: -fx-tab-border-color, -fx-control-inner-background;
--fx-background-insets: 0, 1 1 0 1;
--fx-background-radius: 5 5 0 0, 4 4 0 0;
+.text-primary {
+  -fx-text-fill: #428bca;
 }
-.tab:disabled
-{
--fx-opacity: -fx-disabled-opacity;
+.text-primary:hover {
+  -fx-text-fill: #3071a9;
 }
-.tab:disabled:hover
-{
--fx-color: -fx-base;
--fx-opacity: -fx-disabled-opacity;
+.text-warning {
+  -fx-text-fill: #c09853;
 }
-.tab-pane *.tab-header-background
-{
--fx-background-color: -fx-outer-border, -fx-inner-border, derive(-fx-color, -20%);
--fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
+.text-warning:hover {
+  -fx-text-fill: #a47e3c;
 }
-/*.tab-pane *.tab-header-area {*/
-/* I would like to use -fx-tab-border-color here, but for some reason it */
-/* just isn't the correct color, even though it works in :top above */
-/*    -fx-background-color: -fx-tab-border-color, lightgray;*/
-/*}*/
-.tab-pane:top *.tab-header-area
-{
--fx-background-insets: 0, 0 0 1 0;
--fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+.text-danger {
+  -fx-text-fill: #b94a48;
 }
-.tab-pane:bottom *.tab-header-area
-{
--fx-background-insets: 0, 1 0 0 0;
--fx-padding: 0 0.166667em 0.416667em 0.833em; /* 0 2 5 0 */
+.text-danger:hover {
+  -fx-text-fill: #953b39;
 }
-.tab-pane:left *.tab-header-area
-{
--fx-background-insets: 0, 0 1 0 0;
--fx-padding: 0.833em 0.0em 0.166667em 0.416667em; /* 10 0 2 5 */
+.text-success {
+  -fx-text-fill: #468847;
 }
-.tab-pane:right *.tab-header-area
-{
--fx-background-insets: 0, 0 0 0 1;
--fx-padding: 0.833em 0.416667em 0.166667em 0.0em; /* 10 5 2 0 */
+.text-success:hover {
+  -fx-text-fill: #356635;
 }
-.tab-pane .headers-region
-{
--fx-effect: dropshadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0, 0);
+.text-info {
+  -fx-text-fill: #3a87ad;
 }
-/* TODO: scaling the shape seems to make it way too large */
-.tab-close-button
-{
--fx-background-color: -fx-mark-color;
--fx-shape: "M 0,0 H1 L 4,3 7,0 H8 V1 L 5,4 8,7 V8 H7 L 4,5 1,8 H0 V7 L 3,4 0,1 Z";
--fx-scale-shape: false;
--fx-effect: dropshadow(two-pass-box , rgba(255, 255, 255, 0.4), 1, 0.0 , 0, 1);
+.text-info:hover {
+  -fx-text-fill: #2d6987;
 }
-.tab-close-button:hover
-{
--fx-background-color: derive(-fx-mark-color, -30%);
+.text-left {
+  -fx-text-alignment: left;
 }
-/* CONTROL BUTTONS */
-.control-buttons-tab
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
--fx-background-insets: 0, 1, 2;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-padding: 0.083333em 0.25em 0.083333em 0.25em; /* 1 3 1 3 */
+.text-center {
+  -fx-text-alignment: center;
 }
-.tab-down-button
-{
--fx-background-color: transparent;
--fx-padding: 0.0em 0.416667em 0.0em 0.416667em; /* 0 5 0 5 */
+.text-right {
+  -fx-text-alignment: right;
 }
-.tab-down-button:hover
-{
--fx-background-color: -fx-body-color;
--fx-color: -fx-hover-base;
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  -fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -fx-font-weight: 500;
 }
-.tab-down-button .arrow
-{
--fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
--fx-background-insets: 1 0 -1 0, 0;
--fx-padding: 0.238083em 0.416667em 0.238083em 0.416667em; /* 2.857 5 2.857 5 */
--fx-shape: "M 0 0 H 7 L 3.5 4 z";
+.h1,
+.h2,
+.h3 {
+  -fx-padding: 20px 0 10px 0;
 }
-/* FLOATING TABS CUSTOMISATION */
-.tab-pane.floating *.tab-header-background {
--fx-background-color: null;
+.h4,
+.h5,
+.h6 {
+  -fx-padding: 10px 0 10px 0;
 }
-.tab-pane.floating *.tab-header-area
-{
--fx-background-color: null;
+.h1 {
+  -fx-font-size: 36px;
 }
-.tab-pane.floating *.tab-content-area
-{
--fx-background-color: -fx-tab-border-color, -fx-control-inner-background;
--fx-background-insets: 0, 1;
--fx-background-radius: 5, 4;
+.h2 {
+  -fx-font-size: 30px;
 }
-.tab-pane.floating *.tab
-{
--fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
--fx-background-insets: 0, 1, 2;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+.h3 {
+  -fx-font-size: 24px;
 }
-.tab-pane.floating *.tab:selected
-{
--fx-background-color: -fx-tab-border-color, -fx-control-inner-background;
--fx-background-insets: 0 0 -1 0, 1 1 -1 1;
--fx-background-radius: 5 5 0 0, 4 4 0 0;
+.h4 {
+  -fx-font-size: 18px;
 }
-/*.tab-pane:floating *.control-buttons-tab
-{
--fx-padding: 0.083333em 0.25em 0.083333em 0.25em;
--fx-background-color: -fx-tab-border-color, -fx-inner-border, -fx-body-color;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-background-insets: 0, 1 1 0 1, 2 2 0 2;
-}*/
+.h5 {
+  -fx-font-size: 14px;
+}
+.h6 {
+  -fx-font-size: 12px;
+}
+
+.page-header {
+  -fx-padding: 40px 0 29px 0;
+}
+
+.container {
+  -fx-padding: 0 15px 0 15px;
+}
+
+.alert {
+  /* margin-bottom: 20px; Cannot found way to configure margins via css */
+  -fx-padding: 15px;
+  -fx-gap-start-and-end: true;
+  -fx-border-style: solid;
+  -fx-border-width: 1px;
+  -fx-border-radius: 4px;
+}
+
+.alert-success {
+  -fx-background-color: #dff0d8;
+  -fx-border-color: #d6e9c6;
+  -fx-text-fill: #468847;
+}
+.alert-info {
+  -fx-background-color: #d9edf7;
+  -fx-border-color: #bce8f1;
+  -fx-text-fill: #3a87ad;
+}
+.alert-warning {
+  -fx-background-color: #fcf8e3;
+  -fx-border-color: #faebcc;
+  -fx-text-fill: #c09853;
+}
+.alert-danger {
+  -fx-background-color: #f2dede;
+  -fx-border-color: #ebccd1;
+  -fx-text-fill: #b94a48;
+}
+
+.btn-default {
+  -fx-text-fill: #333333;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #cccccc;
+}
+.btn-default:hover {
+  -fx-text-fill: #333333;
+  -fx-background-color: #ebebeb;
+  -fx-border-color: #adadad;
+}
+.btn-default:disabled {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #cccccc;
+}
+
+.btn-primary {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #428bca;
+  -fx-border-color: #357ebd;
+}
+.btn-primary:hover {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #3276b1;
+  -fx-border-color: #285e8e;
+}
+.btn-primary:disabled {
+  -fx-background-color: #428bca;
+  -fx-border-color: #357ebd;
+}
+
+.btn-warning {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #f0ad4e;
+  -fx-border-color: #eea236;
+}
+.btn-warning:hover {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #ed9c28;
+  -fx-border-color: #d58512;
+}
+.btn-warning:disabled {
+  -fx-background-color: #f0ad4e;
+  -fx-border-color: #eea236;
+}
+
+.btn-danger {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #d9534f;
+  -fx-border-color: #d43f3a;
+}
+.btn-danger:hover {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #d2322d;
+  -fx-border-color: #ac2925;
+}
+.btn-danger:disabled {
+  -fx-background-color: #d9534f;
+  -fx-border-color: #d43f3a;
+}
+
+.btn-success {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #5cb85c;
+  -fx-border-color: #4cae4c;
+}
+.btn-success:hover {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #47a447;
+  -fx-border-color: #398439;
+}
+.btn-success:disabled {
+  -fx-background-color: #5cb85c;
+  -fx-border-color: #4cae4c;
+}
+
+.btn-info {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #5bc0de;
+  -fx-border-color: #46b8da;
+}
+.btn-info:hover {
+  -fx-text-fill: #ffffff;
+  -fx-background-color: #39b3d7;
+  -fx-border-color: #269abc;
+}
+.btn-info:disabled {
+  -fx-background-color: #5bc0de;
+  -fx-border-color: #46b8da;
+}

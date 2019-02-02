@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import interfaces.UIController;
 import service.StageHandler;
+import service.WebAssetLoader;
 
 import java.io.IOException;
 
@@ -33,7 +34,8 @@ public class Splash extends UIController
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
-        // TODO: Implement LoadingService Thread Pool
+        // TODO: Implement WebAssetLoader Thread Pool
+        WebAssetLoader webAssetLoader = new WebAssetLoader();
         stage.close();
         stageHandler.free();
     }
