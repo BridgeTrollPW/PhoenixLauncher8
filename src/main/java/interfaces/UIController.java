@@ -1,7 +1,7 @@
 package interfaces;
 
 import javafx.stage.Stage;
-import service.StageHandler;
+import util.StageHandler;
 
 public class UIController
 {

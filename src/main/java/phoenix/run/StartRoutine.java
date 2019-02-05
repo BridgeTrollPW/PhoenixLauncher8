@@ -2,7 +2,7 @@ package phoenix.run;
 
 import phoenix.entrypoint.Splash;
 import phoenix.landing.Landing;
-import service.StageHandler;
+import util.StageHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

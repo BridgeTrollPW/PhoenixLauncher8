@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import interfaces.UIController;
-import service.StageHandler;
+import util.StageHandler;
 import service.WebAssetLoader;
 
 import java.io.IOException;

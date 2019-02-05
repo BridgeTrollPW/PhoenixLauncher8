@@ -25,5 +25,7 @@ public class WebAssetLoader
         }
         System.out.println(response.getBody());
 
+        //UpdateService updateService = new UpdateService();
+
     }
 }
